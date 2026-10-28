@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir, cp } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { buildBlog } from './blog.mjs';
 
 export const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({
@@ -79,7 +80,7 @@ export async function buildSite({ dataPath = resolve(root, 'content/profile.json
     ? `<img class="portrait" src="${safeUrl(p.portrait)}" alt="Portrait of ${escape(p.name)}" width="160" height="200">`
     : `<div class="portrait portrait-monogram" role="img" aria-label="${escape(p.name)} initials"><span>${escape(p.name.split(/\s+/).map(word => word[0]).join(''))}</span></div>`;
   const fullName = `${escape(p.name)}${p.chineseName ? ` <span class="chinese-name" lang="zh-Hans">(${escape(p.chineseName)})</span>` : ''}`;
-  const nav = sections.map(item => `<a href="#${item.id}">${item.title}</a>`).join('\n');
+  const nav = sections.map(item => `<a href="#${item.id}">${item.title}</a>`).join('\n') + '\n<a href="blog/">Blog</a>';
   const schema = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name: p.name, alternateName: p.chineseName, url: p.siteUrl, jobTitle: p.role, affiliation: { '@type': 'CollegeOrUniversity', name: p.university.name, url: p.university.url }, sameAs: (p.links ?? []).filter(item => /^https?:/.test(item.url)).map(item => item.url) }).replace(/</g, '\\u003c');
   const html = `<!doctype html>
 <html lang="en">
@@ -125,9 +126,11 @@ export async function buildSite({ dataPath = resolve(root, 'content/profile.json
   await cp(resolve(root, 'public'), outputPath, { recursive: true });
   await writeFile(resolve(outputPath, 'index.html'), html);
   await writeFile(resolve(outputPath, '.nojekyll'), '');
+  const posts = await buildBlog({ root, outputPath, profile: p });
   await writeFile(resolve(outputPath, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${p.siteUrl.replace(/\/$/, '')}/sitemap.xml\n`);
-  await writeFile(resolve(outputPath, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${escape(p.siteUrl)}</loc><lastmod>${escape(p.updated)}</lastmod></url></urlset>\n`);
-  console.log(`Built ${sections.length} sections → ${outputPath}`);
+  const sitemapEntries = [{ url: p.siteUrl, date: p.updated }, { url: new URL('blog/', p.siteUrl).href, date: p.updated }, ...posts];
+  await writeFile(resolve(outputPath, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapEntries.map(item => `<url><loc>${escape(item.url)}</loc><lastmod>${item.date}</lastmod></url>`).join('')}</urlset>\n`);
+  console.log(`Built ${sections.length} sections and ${posts.length} blog posts → ${outputPath}`);
   return { html, profile: p, outputPath };
 }
 

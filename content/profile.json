@@ -3,29 +3,106 @@
   "updated": "2026-10-29",
   "name": "Yichen Long",
   "chineseName": "龙羿辰",
-  "authorNames": ["Yichen Long", "龙羿辰"],
+  "authorNames": [
+    "Yichen Long",
+    "龙羿辰"
+  ],
   "role": "Ph.D. Student",
-  "university": { "name": "Fudan University", "url": "https://www.fudan.edu.cn/" },
-  "department": { "name": "", "url": "" },
+  "university": {
+    "name": "Fudan University",
+    "url": "https://www.fudan.edu.cn/"
+  },
+  "department": {
+    "name": "",
+    "url": ""
+  },
   "program": "Fudan–Zhangjiang Laboratory Joint Training Program",
-  "lab": { "name": "CODA lab", "url": "https://krz.engineer/" },
-  "advisor": { "name": "Prof. Keren Zhu", "url": "https://krz.engineer/keren/" },
+  "lab": {
+    "name": "CODA lab",
+    "url": "https://krz.engineer/"
+  },
+  "advisor": {
+    "name": "Prof. Keren Zhu",
+    "url": "https://krz.engineer/keren/"
+  },
   "email": "longyc26@m.fudan.edu.cn",
-  "portrait": "",
+  "portrait": "assets/portrait.jpg",
   "links": [
-    { "label": "GitHub", "url": "https://github.com/Yichen-Long" }
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=bTxQB9MAAAAJ&hl=en"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Yichen-Long"
+    }
   ],
   "biography": [
-    "I am a Ph.D. student at Fudan University, working with Prof. Keren Zhu in the CODA lab. I joined the group in Fall 2026 and am part of the Fudan–Zhangjiang Laboratory Joint Training Program. Previously, I received my B.S. from Shanghai Jiao Tong University in 2026."
+    "I am a Ph.D. student at Fudan University, working with Prof. Keren Zhu in the CODA lab. I joined the group in Fall 2026 and am part of the Fudan–Zhangjiang Laboratory Joint Training Program. Previously, I received my B.S. in Microelectronics from Shanghai Jiao Tong University in 2026."
   ],
   "researchInterests": [
-    { "name": "3D Integrated Circuits (3D-ICs)", "description": "" },
-    { "name": "LLM-Driven Circuit Design", "description": "" }
+    {
+      "name": "3D Integrated Circuits (3D-ICs)",
+      "description": ""
+    },
+    {
+      "name": "LLM-Driven Circuit Design",
+      "description": ""
+    }
   ],
   "publications": {
-    "conference": [],
+    "conference": [
+      {
+        "id": "C1",
+        "title": "HEALSound: Healthcare Education and Labeling for Cardiopulmonary Sounds",
+        "authors": [
+          "Yichen Long",
+          "Changyan Chen",
+          "Huajie Huang",
+          "Xuya Jiang",
+          "Qing Zhang",
+          "Yuhang Zhang",
+          "Jian Zhao",
+          "Rui Pan",
+          "Yongfu Li"
+        ],
+        "venue": "IEEE International Symposium on Circuits and Systems (ISCAS), pp. 1–5",
+        "year": 2025,
+        "order": 1,
+        "status": "Published",
+        "url": "https://ieeexplore.ieee.org/document/11043827/",
+        "note": "",
+        "links": [
+          {
+            "label": "Paper",
+            "url": "https://ieeexplore.ieee.org/document/11043827/"
+          }
+        ]
+      }
+    ],
     "journal": [],
-    "preprints": []
+    "preprints": [
+      {
+        "id": "P1",
+        "title": "AnalogScout: Simulation-Efficient PVT-Aware Analog Sizing with LLM Agents",
+        "authors": [
+          "Yichen Long",
+          "Keren Zhu"
+        ],
+        "venue": "arXiv:2610.37319 [cs.AR]",
+        "year": 2026,
+        "order": 1,
+        "status": "Preprint",
+        "url": "https://arxiv.org/abs/2610.37319",
+        "note": "",
+        "links": [
+          {
+            "label": "PDF",
+            "url": "https://arxiv.org/pdf/2610.37319"
+          }
+        ]
+      }
+    ]
   },
   "education": [
     {
@@ -33,19 +110,32 @@
       "field": "",
       "institution": "Fudan University",
       "url": "https://www.fudan.edu.cn/",
-      "period": "2026–present",
+      "period": "Sep. 2026–present",
       "note": "Fudan–Zhangjiang Laboratory Joint Training Program"
     },
     {
       "degree": "B.S.",
-      "field": "",
+      "field": "Microelectronics",
       "institution": "Shanghai Jiao Tong University",
       "url": "https://en.sjtu.edu.cn/",
-      "period": "2022–2026",
+      "period": "Sep. 2022–Jun. 2026",
       "note": ""
     }
   ],
   "experience": [],
   "teaching": [],
-  "awards": []
+  "awards": [
+    {
+      "title": "First Prize, National Finals, 9th China College IC Competition",
+      "year": 2025,
+      "description": "Team leader; MOSFET automated testing system and integrated EDA toolkit.",
+      "url": ""
+    },
+    {
+      "title": "World Winner, IEEE CASS Student Design Competition",
+      "year": 2024,
+      "description": "Team member; A Wearable Cardiopulmonary Healthcare System for Real-Time Monitoring of Multi-Modal Physiological Signals.",
+      "url": "https://ieee-cas.org/post/announcement/announcing-2024-student-design-competition-winners"
+    }
+  ]
 }

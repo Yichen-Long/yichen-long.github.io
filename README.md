@@ -7,6 +7,7 @@
 ## 填写内容
 
 - **修改网页实际内容：** 编辑 [content/profile.json](content/profile.json)。
+- **写 Blog：** 查看 [BLOG_GUIDE.md](BLOG_GUIDE.md)，复制 [文章模板](content/posts/_template.md) 开始写作。
 - **头像：** 放入 `public/assets/portrait.jpg`，设置 `portrait` 为 `assets/portrait.jpg`。
 - **CV / Paper / Slides：** 放入 `public/files/`，链接写成 `files/文件名.pdf`。建议使用英文文件名。
 - **样式：** 编辑 [public/assets/style.css](public/assets/style.css)。
@@ -17,9 +18,10 @@
 
 ## 本地查看
 
-需要 Node.js 22 或更高版本，无需安装第三方依赖。
+需要 Node.js 22 或更高版本。首次运行先安装锁定的 Markdown 解析依赖：
 
 ```powershell
+npm ci
 npm run preview
 ```
 
