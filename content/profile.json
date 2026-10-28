@@ -1,0 +1,51 @@
+{
+  "siteUrl": "https://yichen-long.github.io/",
+  "updated": "2026-10-29",
+  "name": "Yichen Long",
+  "chineseName": "龙羿辰",
+  "authorNames": ["Yichen Long", "龙羿辰"],
+  "role": "Ph.D. Student",
+  "university": { "name": "Fudan University", "url": "https://www.fudan.edu.cn/" },
+  "department": { "name": "", "url": "" },
+  "program": "Fudan–Zhangjiang Laboratory Joint Training Program",
+  "lab": { "name": "CODA lab", "url": "https://krz.engineer/" },
+  "advisor": { "name": "Prof. Keren Zhu", "url": "https://krz.engineer/keren/" },
+  "email": "longyc26@m.fudan.edu.cn",
+  "portrait": "",
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/Yichen-Long" }
+  ],
+  "biography": [
+    "I am a Ph.D. student at Fudan University, working with Prof. Keren Zhu in the CODA lab. I joined the group in Fall 2026 and am part of the Fudan–Zhangjiang Laboratory Joint Training Program. Previously, I received my B.S. from Shanghai Jiao Tong University in 2026."
+  ],
+  "researchInterests": [
+    { "name": "3D Integrated Circuits (3D-ICs)", "description": "" },
+    { "name": "LLM-Driven Circuit Design", "description": "" }
+  ],
+  "publications": {
+    "conference": [],
+    "journal": [],
+    "preprints": []
+  },
+  "education": [
+    {
+      "degree": "Ph.D. Student",
+      "field": "",
+      "institution": "Fudan University",
+      "url": "https://www.fudan.edu.cn/",
+      "period": "2026–present",
+      "note": "Fudan–Zhangjiang Laboratory Joint Training Program"
+    },
+    {
+      "degree": "B.S.",
+      "field": "",
+      "institution": "Shanghai Jiao Tong University",
+      "url": "https://en.sjtu.edu.cn/",
+      "period": "2022–2026",
+      "note": ""
+    }
+  ],
+  "experience": [],
+  "teaching": [],
+  "awards": []
+}

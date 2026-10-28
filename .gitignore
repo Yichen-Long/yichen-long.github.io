@@ -1,0 +1,14 @@
+dist/
+.qa/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Local notes and credentials
+CONTENT_TEMPLATE.md
+CONTENT_TODO.md
+private-notes/
+.env
+.env.*
+!.env.example

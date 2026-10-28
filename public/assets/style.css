@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light;
+  --ink: #24282c;
+  --muted: #69737b;
+  --blue: #416e91;
+  --line: #cbd2d7;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: #f1f2f3;
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', 'Songti SC', SimSun, serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-decoration: none; text-underline-offset: 3px; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 1px; }
+.page { max-width: 1100px; margin: 38px auto; padding: 42px 50px 23px; background: #fff; border: 1px solid #e1e5e8; }
+.skip-link { position: absolute; left: 16px; top: -80px; padding: 8px 14px; background: #fff; z-index: 2; }
+.skip-link:focus { top: 8px; }
+.profile { display: flex; align-items: center; gap: 34px; margin-bottom: 32px; }
+.portrait { display: block; flex: 0 0 160px; width: 160px; height: 200px; object-fit: cover; object-position: center; }
+.portrait-monogram { display: grid; place-items: center; background: #e9eef2; color: #6b879b; border: 1px solid #d9e2e8; }
+.portrait-monogram span { font-size: 48px; letter-spacing: 5px; padding-left: 5px; font-weight: 400; }
+.profile-text { min-width: 0; flex: 1; }
+h1, h2, h3 { color: var(--blue); line-height: 1.28; }
+h1 { margin: 0 0 9px; font-size: 32px; letter-spacing: -.65px; }
+.chinese-name { white-space: nowrap; font-size: .85em; font-weight: 500; letter-spacing: .02em; }
+.profile p { margin: 1px 0; }
+.role { font-weight: bold; font-size: 18px; }
+.program { color: var(--muted); font-size: 15px; padding-top: 3px; }
+.profile .advisor { margin-top: 10px; }
+.label { font-weight: bold; }
+.profile a[href^='mailto:'] { overflow-wrap: anywhere; }
+.profile-links { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 11px; font-size: 15px; }
+.profile-links span { color: #aeb8bf; }
+.section-nav { display: flex; flex-wrap: wrap; gap: 6px 25px; margin-bottom: 28px; padding: 11px 0; border-block: 1px solid #e0e5e9; font-size: 14px; }
+section { margin: 0 0 31px; }
+h2 { margin: 0 0 12px; padding-bottom: 5px; font-size: 24px; border-bottom: 1px solid var(--line); }
+h3 { font-size: 19px; margin: 19px 0 10px; }
+p { margin: 0 0 10px; }
+ul { margin: 8px 0 0; padding-left: 23px; list-style-type: square; }
+li { padding-left: 3px; margin: 7px 0; }
+.interest-description { display: block; font-size: 15px; color: var(--muted); }
+.period { margin-left: 13px; color: var(--muted); white-space: nowrap; font-size: 15px; }
+.entry-note { color: var(--muted); font-size: 15px; }
+.publication { font-size: 16px; line-height: 1.55; margin-bottom: 17px; overflow-wrap: anywhere; }
+.paper-title { font-weight: bold; }
+.paper-links { font-size: 14px; margin-top: 2px; }
+.venue { color: #525e68; }
+.status { font-style: italic; }
+sup { font-size: .72em; line-height: 0; }
+footer { display: flex; flex-wrap: wrap; gap: 7px 22px; margin-top: 38px; border-top: 1px solid #e0e5e9; padding-top: 15px; font-size: 12px; color: var(--muted); }
+footer a { margin-left: auto; }
+@media (max-width: 1140px) {
+  .page { margin: 24px; }
+}
+@media (max-width: 700px) {
+  body { font-size: 16px; }
+  .page { margin: 0; padding: 28px 23px 22px; border: 0; min-height: 100vh; }
+  .profile { gap: 22px; align-items: flex-start; }
+  .portrait { flex-basis: 110px; width: 110px; height: 138px; }
+  .portrait-monogram span { font-size: 35px; }
+  h1 { font-size: 26px; }
+  .chinese-name { display: block; margin-top: 4px; }
+  .role { font-size: 17px; }
+  .program { font-size: 14px; }
+  h2 { font-size: 22px; }
+  .section-nav { gap: 6px 20px; }
+  .period { display: block; margin-left: 0; font-size: 14px; }
+  .entry-note { font-size: 14px; }
+}
+@media (max-width: 460px) {
+  .profile { flex-direction: column; gap: 20px; }
+  .portrait { flex-basis: auto; width: 112px; height: 140px; }
+  h1 { font-size: 29px; }
+  .chinese-name { display: inline; font-size: .76em; }
+  .profile .advisor { margin-top: 12px; }
+  .section-nav { margin-bottom: 26px; }
+  footer a { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  body { background: #fff; font-size: 11pt; }
+  .page { border: 0; margin: 0; padding: 0; max-width: none; }
+  .section-nav, .skip-link, footer a { display: none; }
+  .profile { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  .publication, li { break-inside: avoid; }
+}
